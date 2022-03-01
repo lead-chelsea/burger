@@ -15,5 +15,23 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'vue/singleline-html-element-content-newline': 'off',
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        "ignores": ["index"]
+      }
+    ],
+      "vue/html-self-closing": ["error", {
+        "html": {
+          "void": "any",
+          "normal": "always",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }],
+    "linebreak-style": 0,
+  }
 }
