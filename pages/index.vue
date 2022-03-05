@@ -6,6 +6,7 @@
       class="bg-[url('https://jthemes.net/themes/html/testo/files/images/hero-4.jpg')] px-20"
     >
       <div class="pt-5 flex">
+        <!-- menu -->
         <div class="w-1/2">
           <img
             class="w-[150px] mx-20"
