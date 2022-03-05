@@ -1,17 +1,11 @@
 <template>
   <div class="font-roboto text-light text-gray-500">
     <!-- header -->
-    <div
-      id="header"
-      class="bg-[url('https://jthemes.net/themes/html/testo/files/images/hero-4.jpg')] px-20"
-    >
+    <div id="header" class="bg-[url('/hero-bg.jpg')] px-20">
       <div class="pt-5 flex">
         <!-- menu -->
         <div class="w-1/2">
-          <img
-            class="w-[150px] mx-20"
-            src="https://jthemes.net/themes/html/testo/files/images/logo-01.png"
-          />
+          <img class="w-[150px] mx-20" src="logo.png" />
         </div>
         <div class="w-1/2 text-white uppercase">
           <ul class="flex gap-10 justify-center font-oswald text-lg">
@@ -26,7 +20,7 @@
       <!-- hero -->
       <div class="grid grid-cols-12 min-h-screen py-20 px-20">
         <div class="col-span-7">
-          <img src="https://jthemes.net/themes/html/testo/files/images/hero-4-img.png" />
+          <img src="hero-burger.png" />
         </div>
         <div class="col-span-5 text-white text-center ml-5 pt-10">
           <h2 class="text-8xl uppercase font-lilita">Classic Burger</h2>
@@ -39,10 +33,7 @@
       </div>
     </div>
 
-    <div
-      id="section-1"
-      class="bg-cover bg-center pb-60 bg-[url('https://jthemes.net/themes/html/testo/files/images/about-2.jpg')]"
-    >
+    <div id="section-1" class="bg-cover bg-center pb-60 bg-[url('/about.jpg')]">
       <div class="mx-auto py-20 text-center px-64">
         <h2
           class="font-oswald font-medium leading-snug text-6xl uppercase tracking-wide text-neutral-800"
@@ -147,84 +138,30 @@
         <!-- burger grid -->
         <div class="grid grid-cols-4 gap-5">
           <!-- burger item card -->
-          <div class="rounded-md border-gray-200 border text-left">
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/menu/burger-11.jpg"
-              alt=""
-            />
-            <p class="pl-5 mt-5 font-oswald font-medium uppercase text-2xl">
-              Crispy Chicken
-            </p>
-            <p class="pl-5 mt-2 text-gray-500 font-light font-roboto mr-5">
-              Chicken breast, chilli sauce, tomatoes, pickles, coleslaw
-            </p>
-            <p class="pl-5 mb-8 mt-5">
-              <span
-                class="rounded rounded-lg bg-amber-800 px-5 py-2 text-yellow-400 font-oswald font-bold text-xl"
-                >RM 11.99</span
-              >
-            </p>
-          </div>
-
-          <!-- burger item card -->
-          <div class="rounded-md border-gray-200 border text-left">
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/menu/burger-12.jpg"
-              alt=""
-            />
-            <p class="pl-5 mt-5 font-oswald font-medium uppercase text-2xl">
-              Ultimate Bacon
-            </p>
-            <p class="pl-5 mt-2 text-gray-500 font-light font-roboto mr-5">
-              House beef patty, cheddar cheese, bacon, onion, mustard
-            </p>
-            <p class="pl-5 mb-8 mt-5">
-              <span
-                class="rounded rounded-lg bg-amber-800 px-5 py-2 text-yellow-400 font-oswald font-bold text-xl"
-                >RM 14.99</span
-              >
-            </p>
-          </div>
-
-          <!-- burger item card -->
-          <div class="rounded-md border-gray-200 border text-left">
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/menu/burger-13.jpg"
-              alt=""
-            />
-            <p class="pl-5 mt-5 font-oswald font-medium uppercase text-2xl">
-              Baa-baa Black Sheep
-            </p>
-            <p class="pl-5 mt-2 text-gray-500 font-light font-roboto mr-5">
-              American cheese, tomato relish, avocado, lettuce, red onion
-            </p>
-            <p class="pl-5 mb-8 mt-5">
-              <span
-                class="rounded rounded-lg bg-amber-800 px-5 py-2 text-yellow-400 font-oswald font-bold text-xl"
-                >RM 15.75</span
-              >
-            </p>
-          </div>
-
-          <!-- burger item card -->
-          <div class="rounded-md border-gray-200 border text-left">
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/menu/burger-14.jpg"
-              alt=""
-            />
-            <p class="pl-5 mt-5 font-oswald font-medium uppercase text-2xl">
-              Double Burger
-            </p>
-            <p class="pl-5 mt-2 text-gray-500 font-light font-roboto mr-5">
-              2 beef patties, cheddar cheese, mustard, pickles, tomatoes
-            </p>
-            <p class="pl-5 mb-8 mt-5">
-              <span
-                class="rounded rounded-lg bg-amber-800 px-5 py-2 text-yellow-400 font-oswald font-bold text-xl"
-                >RM 15.35</span
-              >
-            </p>
-          </div>
+          <BurgerItem
+            image="crispy-chicken.jpg"
+            title="Crispy Chicken"
+            description="Chicken breast, chilli sauce, tomatoes, pickles, coleslaw"
+            :price="11.99"
+          />
+          <BurgerItem
+            image="ultimate-bacon.jpg"
+            title="Ultimate Bacon"
+            description="House beef patty, cheddar cheese, bacon, onion, mustard"
+            :price="14.99"
+          />
+          <BurgerItem
+            image="baa-baa.jpg"
+            title="Baa-Baa Black Sheep"
+            description="American cheese, tomato relish, avocado, lettuce, red onion"
+            :price="15.75"
+          />
+          <BurgerItem
+            image="double-burger.jpg"
+            title="Double Burger"
+            description="2 beef patties, cheddar cheese, mustard, pickles, tomatoes"
+            :price="15.35"
+          />
         </div>
 
         <!-- coupon row 1 -->
@@ -232,7 +169,7 @@
           class="grid grid-cols-12 mt-10 font-oswald uppercase text-4xl text-yellow-800 gap-5"
         >
           <div
-            class="col-span-5 pl-48 pb-10 bg-cover bg-center bg-[url('https://jthemes.net/themes/html/testo/files/images/pb-2-1.jpg')]"
+            class="col-span-5 pl-48 pb-10 bg-cover bg-center bg-[url('/fries-bg-1.jpg')]"
           >
             <h4 class="font-light mt-16">Get your free</h4>
             <h4 class="font-medium">Cheese Fries</h4>
@@ -243,7 +180,7 @@
             </button>
           </div>
           <div
-            class="col-span-7 pr-10 text-right bg-cover bg-center bg-[url('https://jthemes.net/themes/html/testo/files/images/pb-2-2.jpg')]"
+            class="col-span-7 pr-10 text-right bg-cover bg-center bg-[url('/burger-bg-1.jpg')]"
           >
             <h4 class="font-light mt-16">Crispy Chicken</h4>
             <h4 class="font-medium">Burger is back!</h4>
@@ -258,22 +195,13 @@
         <!-- offer -->
         <div class="grid grid-cols-3 mt-20 gap-5">
           <div>
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/offer-6.jpg"
-              alt=""
-            />
+            <img src="offer-1.jpg" />
           </div>
           <div>
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/offer-7.jpg"
-              alt=""
-            />
+            <img src="offer-2.jpg" />
           </div>
           <div>
-            <img
-              src="https://jthemes.net/themes/html/testo/files/images/offer-8.jpg"
-              alt=""
-            />
+            <img src="offer-3.jpg" />
           </div>
         </div>
       </div>
@@ -281,10 +209,7 @@
 
     <div id="section-4" class="grid grid-cols-2 bg-gray-100 py-20">
       <div class="pl-40">
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/about-01-img.png"
-          alt=""
-        />
+        <img src="about.png" />
       </div>
       <div class="pl-20 pr-40 pt-20">
         <h4
@@ -314,26 +239,14 @@
           the convenience of ordering food online at any time and from any location.
         </p>
         <button>
-          <img
-            src="https://jthemes.net/themes/html/testo/files/images/appstore.png"
-            alt=""
-            class="h-[50px] mr-5"
-          />
+          <img src="/appstore.png" class="h-[50px] mr-5" />
         </button>
         <button>
-          <img
-            src="https://jthemes.net/themes/html/testo/files/images/googleplay.png"
-            alt=""
-            class="h-[50px]"
-          />
+          <img src="/googleplay.png" class="h-[50px]" />
         </button>
       </div>
       <div class="col-span-2">
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/e-shop.png"
-          alt=""
-          class="-mt-10"
-        />
+        <img src="/eshop.png" class="-mt-10" />
       </div>
     </div>
 
@@ -341,36 +254,12 @@
       id="section-6"
       class="bg-gray-200 py-20 flex flex-wrap gap-10 px-20 justify-center"
     >
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-12.png"
-        alt=""
-        class="w-40"
-      />
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-13.png"
-        alt=""
-        class="w-40"
-      />
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-14.png"
-        alt=""
-        class="w-40"
-      />
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-15.png"
-        alt=""
-        class="w-40"
-      />
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-16.png"
-        alt=""
-        class="w-40"
-      />
-      <img
-        src="https://jthemes.net/themes/html/testo/files/images/brand-17.png"
-        alt=""
-        class="w-40"
-      />
+      <img src="brand-1.png" class="w-40" />
+      <img src="brand-2.png" class="w-40" />
+      <img src="brand-3.png" class="w-40" />
+      <img src="brand-4.png" class="w-40" />
+      <img src="brand-5.png" class="w-40" />
+      <img src="brand-6.png" class="w-40" />
     </div>
 
     <div id="section-7" class="text-center my-20">
@@ -383,44 +272,20 @@
       </p>
 
       <div class="grid grid-cols-4 gap-5 mx-36 mt-10">
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-01.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-02.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-03.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-04.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-05.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-06.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-07.jpg"
-          alt=""
-        />
-        <img
-          src="https://jthemes.net/themes/html/testo/files/images/gallery/img-08.jpg"
-          alt=""
-        />
+        <img src="img-01.jpg" />
+        <img src="img-02.jpg" />
+        <img src="img-03.jpg" />
+        <img src="img-04.jpg" />
+        <img src="img-05.jpg" />
+        <img src="img-06.jpg" />
+        <img src="img-07.jpg" />
+        <img src="img-08.jpg" />
       </div>
     </div>
 
     <div
       id="section-8"
-      class="text-center text-neutral-700 bg-top bg-cover bg-[url('https://jthemes.net/themes/html/testo/files/images/banner-4.jpg')] py-20"
+      class="text-center text-neutral-700 bg-top bg-cover bg-[url('/banner.jpg')] py-20"
     >
       <h4 class="font-oswald text-4xl uppercase">We guarantee</h4>
       <h4 class="font-oswald text-6xl uppercase font-medium my-5">30 Minutes Delivery</h4>
@@ -467,9 +332,9 @@
         </h4>
         <p>For the latest updates!</p>
         <div class="flex justify-center gap-10 mt-5">
-          <img src="facebook.png" class="w-10" alt="" />
-          <img src="instagram.png" class="w-10" alt="" />
-          <img src="youtube.png" class="w-10" alt="" />
+          <img src="facebook.png" class="w-10" />
+          <img src="instagram.png" class="w-10" />
+          <img src="youtube.png" class="w-10" />
         </div>
       </div>
     </div>
@@ -485,7 +350,7 @@
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400,500,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 </style>

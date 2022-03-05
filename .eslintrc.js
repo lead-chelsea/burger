@@ -17,6 +17,11 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/singleline-html-element-content-newline': 'off',
+    "vue/require-prop-types": "off",
+    "vue/html-indent": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "comma-dangle": ["off"],
+    "semi":["off"],
     "vue/multi-word-component-names": [
       "error",
       {
