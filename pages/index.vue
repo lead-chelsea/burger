@@ -488,8 +488,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
-#header {
-  background-image: ;
-}
 </style>
