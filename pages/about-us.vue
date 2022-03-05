@@ -3,8 +3,8 @@
     <div
       class="text-center bg-[url('https://jthemes.net/themes/html/testo/files/images/about-page.jpg')]"
     >
-      <div class="pt-5 flex">
-        <!-- menu -->
+      <!-- menu -->
+      <div class="pt-5 flex px-20">
         <div class="w-1/2">
           <img
             class="w-[150px] mx-20"
