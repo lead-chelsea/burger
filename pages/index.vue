@@ -1,24 +1,12 @@
 <template>
   <div class="font-roboto text-light text-gray-500">
-    <!-- header -->
-    <div id="header" class="bg-[url('/hero-bg.jpg')] px-20">
-      <div class="pt-5 flex">
-        <!-- menu -->
-        <div class="w-1/2">
-          <img class="w-[150px] mx-20" src="logo.png" />
-        </div>
-        <div class="w-1/2 text-white uppercase">
-          <ul class="flex gap-10 justify-center font-oswald text-lg">
-            <li>About Us</li>
-            <li>Our Menu</li>
-            <li>Locations</li>
-            <li>Contacts</li>
-          </ul>
-        </div>
-      </div>
+    <!-- 👉 header -->
+    <div id="header" class="bg-[url('/hero-bg.jpg')]">
+      <!-- 👉 menu -->
+      <NavMenu />
 
       <!-- hero -->
-      <div class="grid grid-cols-12 min-h-screen py-20 px-20">
+      <div class="grid grid-cols-12 min-h-screen py-20 px-40">
         <div class="col-span-7">
           <img src="hero-burger.png" />
         </div>
@@ -297,7 +285,7 @@
       <button
         class="font-oswald uppercase bg-red-500 text-white text-2xl font-medium py-3 px-8 mt-5"
       >
-        CALL: 03-2282 4793
+        CALL: 03-2282 6400
       </button>
     </div>
 
@@ -308,8 +296,9 @@
       <div>
         <h4 class="uppercase font-medium font-oswald text-2xl my-5">Location</h4>
         <p>
-          8721 M Central Avenue,<br />
-          Los Angeles, CA 90036,<br />United States
+          No, 1, Persiaran Bandar Utama, <br />
+          47800 Petaling Jaya, <br />
+          Selangor, Malaysia.<br />
         </p>
       </div>
 
@@ -339,13 +328,7 @@
       </div>
     </div>
 
-    <div
-      id="footer"
-      class="text-center mt-10 py-10 mx-20 font-roboto font-light border-t"
-    >
-      © 2022 Testo Burgers. All Rights Reserved | About Us | Gift Cards | Terms Of Use |
-      Privacy Policy
-    </div>
+    <PageFooter />
   </div>
 </template>
 

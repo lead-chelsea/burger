@@ -23,9 +23,9 @@ module.exports = {
     "comma-dangle": ["off"],
     "semi":["off"],
     "vue/multi-word-component-names": [
-      "error",
+      "off",
       {
-        "ignores": ["index"]
+        "ignores": ["index", "about", "contacts"]
       }
     ],
       "vue/html-self-closing": ["error", {

@@ -1,25 +1,7 @@
 <template>
   <div class="font-roboto">
-    <div
-      class="text-center bg-[url('https://jthemes.net/themes/html/testo/files/images/about-page.jpg')]"
-    >
-      <!-- menu -->
-      <div class="pt-5 flex px-20">
-        <div class="w-1/2">
-          <img
-            class="w-[150px] mx-20"
-            src="https://jthemes.net/themes/html/testo/files/images/logo-01.png"
-          />
-        </div>
-        <div class="w-1/2 text-white uppercase">
-          <ul class="flex gap-10 justify-center font-oswald text-lg">
-            <li>About Us</li>
-            <li>Our Menu</li>
-            <li>Locations</li>
-            <li>Contacts</li>
-          </ul>
-        </div>
-      </div>
+    <div class="text-center bg-[url('/about-page.jpg')]">
+      <NavMenu />
       <h1 class="text-white font-oswald uppercase text-7xl py-32">About Testo Burgers</h1>
     </div>
 
@@ -27,7 +9,7 @@
       <h1 class="text-5xl font-oswald font-medium mt-20 mb-10 uppercase">
         Our Philosophy
       </h1>
-      <p class="text-gray-500">
+      <p class="font-light">
         We're out to make the world a happier place with burgers. fries, and milkshakes.
         We're out to create great food, drinks, service, and fun. We're out to give our
         customers what they want and hope that we make them happy. We're out to make good
@@ -73,11 +55,11 @@
       </div>
     </div>
 
-    <div class="px-40 mb-20">
+    <div class="px-48 mb-20">
       <h1 class="text-5xl font-oswald font-medium mt-20 mb-10 uppercase text-center">
         FAQS
       </h1>
-      <div class="grid grid-cols-2 gap-20">
+      <div class="grid grid-cols-2 gap-12">
         <div class="pr-10">
           <div>
             <h3 class="font-medium font-oswald text-xl pt-5 pb-2 uppercase">
@@ -116,8 +98,8 @@
             Is my personal data secure?
           </h3>
           <p class="font-light">
-            Yes! All your data is kept safe and secure on our servers. Your data will
-            never be shared with any third parties for unauthorized use.
+            Yes! All your data is kept safe and secure on our servers. We will never share
+            your data with any third parties.
           </p>
 
           <h3 class="font-medium font-oswald text-xl pt-5 pb-2 uppercase">
@@ -130,12 +112,6 @@
         </div>
       </div>
     </div>
-    <div
-      id="footer"
-      class="text-center mt-10 py-10 mx-20 font-roboto font-light border-t"
-    >
-      © 2022 Testo Burgers. All Rights Reserved | About Us | Gift Cards | Terms Of Use |
-      Privacy Policy
-    </div>
+    <PageFooter />
   </div>
 </template>
