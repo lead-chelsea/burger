@@ -9,13 +9,13 @@ exports.handler = async function (event, context) {
     secure: true,
     auth: {
       user: 'apikey',
-      pass: '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',
+      pass: process.env.sendgridApiKey,
     },
   });
 
   const email = {
-    from: 'laucherhan@gmail.com',
-    to: 'drlau@thelead.io',
+    from: 'drlau@thelead.io',
+    to: 'laucherhan@gmail.com',
     subject: 'Hello',
     text: 'Hello world',
     html: '<b>Hello world</b>',
