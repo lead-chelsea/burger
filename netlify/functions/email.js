@@ -1,37 +1,35 @@
 const nodemailer = require('nodemailer');
 
-exports.handler = function (event, context, callback) {
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+exports.handler = async function (event, context) {
+  // const { sendgrid_username } = process.env;
+  // console.log('username:', sendgrid_username);
+  const mailer = nodemailer.createTransport({
+    host: 'smtp.sendgrid.net',
     port: 465,
     secure: true,
     auth: {
-      type: 'OAuth2',
-      user: process.env.MAIL_LOGIN,
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN,
-      accessToken: process.env.ACCESS_TOKEN,
+      user: 'apikey',
+      pass: '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',
     },
   });
-  console.log(event.body);
 
-  transporter.sendMail(
-    {
-      from: process.env.MAIL_LOGIN,
-      to: 'laucherhan@gmail.com',
-      subject: 'ZTM Testing Mail' + new Date().toLocaleString(),
-      text: 'Hello this is a test mail',
-    },
-    function (error, info) {
-      if (error) {
-        callback(error);
-      } else {
-        callback(null, {
-          statusCode: 200,
-          body: 'Ok',
-        });
-      }
+  const email = {
+    from: 'laucherhan@gmail.com',
+    to: 'drlau@thelead.io',
+    subject: 'Hello',
+    text: 'Hello world',
+    html: '<b>Hello world</b>',
+  };
+
+  mailer.sendMail(email, (err, info) => {
+    if (err) {
+      console.log(err);
     }
-  );
+    console.log(info.response);
+  });
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Mail sent successfully' }),
+  };
 };
