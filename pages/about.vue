@@ -5,7 +5,7 @@
       <h1 class="text-white font-oswald uppercase text-7xl py-32">About Testo Burgers</h1>
     </div>
 
-    <div class="text-center px-52">
+    <div class="text-center px-24">
       <h1 class="text-5xl font-oswald font-medium mt-20 mb-10 uppercase">
         Our Philosophy
       </h1>
@@ -17,7 +17,7 @@
       </p>
     </div>
 
-    <div class="text-center px-52">
+    <div class="text-center px-24">
       <h1 class="text-5xl font-oswald font-medium mt-20 mb-10 uppercase">Our Team</h1>
       <div class="grid grid-cols-4 gap-12">
         <div>
@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <div class="px-48 mb-20">
+    <div class="px-24 mb-20">
       <h1 class="text-5xl font-oswald font-medium mt-20 mb-10 uppercase text-center">
         FAQS
       </h1>

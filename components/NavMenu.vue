@@ -1,15 +1,22 @@
 <template>
-  <div class="pt-5 flex px-20">
-    <div class="w-1/2">
-      <img class="w-[150px] mx-20" src="logo.png" />
+  <div id="menu" class="grid grid-cols-2 py-5">
+    <div id="menu-left">
+      <img src="logo.png" class="w-[150px]" alt="" />
     </div>
-    <div class="w-1/2 text-white uppercase">
-      <ul class="flex gap-10 justify-center font-oswald text-lg">
-        <li>About Us</li>
-        <li>Our Menu</li>
-        <li>Locations</li>
-        <li>Contacts</li>
-      </ul>
+
+    <div id="menu-right">
+      <div class="grid grid-cols-5 font-oswald text-white uppercase pt-5 pr-10 gap-4">
+        <NuxtLink to="/about">About</NuxtLink>
+        <NuxtLink to="/menu">Our Menu</NuxtLink>
+        <NuxtLink to="/locations">Locations</NuxtLink>
+        <NuxtLink to="/contacts">Contacts</NuxtLink>
+        <NuxtLink to="/cart">
+          Cart
+          <span :class="{ 'text-yellow-500': $store.getters.totalItems > 0 }"
+            >({{ $store.getters.totalItems }})</span
+          >
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
