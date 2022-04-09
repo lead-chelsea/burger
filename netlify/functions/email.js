@@ -15,11 +15,13 @@ exports.handler = async function (event, context) {
 
   const email = {
     from: 'drlau@thelead.io',
-    to: 'laucherhan@gmail.com',
-    subject: 'Hello',
+    to: 'drlau@cherhan.net',
+    subject: 'Hello 1,2,3',
     text: 'Hello world',
     html: '<b>Hello world</b>',
   };
+
+  console.log(email);
 
   mailer.sendMail(email, (err, info) => {
     if (err) {
