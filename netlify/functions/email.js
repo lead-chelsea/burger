@@ -22,6 +22,7 @@ exports.handler = async function (event, context) {
     html: '<b>Hello world</b>',
   };
 
+  console.log('sending email...');
   console.log(email);
 
   mailer.sendMail(email, (err, info) => {
@@ -34,6 +35,6 @@ exports.handler = async function (event, context) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: 'Mail sent successfully' }),
+    body: JSON.stringify({ message: 'Our mail sent successfully' }),
   };
 };
