@@ -25,13 +25,16 @@ exports.handler = async function (event, context) {
   console.log('sending email...');
   console.log(email);
 
-  mailer.sendMail(email, (err, info) => {
-    console.log(' mail is here...');
-    if (err) {
-      console.log('Error:', err);
+  try {
+    await mailer.sendMail(email);
+    console.log('Test email sent successfully');
+  } catch (error) {
+    console.error('Error sending test email');
+    console.error(error);
+    if (error.response) {
+      console.error(error.response.body);
     }
-    console.log('response', info.response);
-  });
+  }
 
   return {
     statusCode: 200,
