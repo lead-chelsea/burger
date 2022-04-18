@@ -24,8 +24,6 @@ const mutations = {
     state.user = user;
   },
   addItem(state, selectedItem) {
-    // state.orders[item] = state.orders[item] + 1 || 1;
-    // state.orderarray.push(item);
     const index = state.orders.findIndex((item) => {
       return item.name == selectedItem.name;
     });
@@ -44,24 +42,6 @@ const mutations = {
 const state = () => ({
   user: null,
   orders: [],
-  // orders: [
-  //   {
-  //     product: 'smokey burger',
-  //     price: 8.95,
-  //     quantity: 2,
-  //   },
-  //   {
-  //     product: 'crispy chicken',
-  //     price: 14.95,
-  //     quantity: 1,
-  //   },
-  //   {
-  //     product: 'double burger',
-  //     price: 11.95,
-  //     quantity: 1,
-  //   },
-  // ],
-  // orderarray: [],
 });
 
 const getters = {

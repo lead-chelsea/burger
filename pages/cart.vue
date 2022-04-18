@@ -5,7 +5,7 @@
       <h1 class="text-white font-oswald uppercase text-6xl py-28">Shopping Cart</h1>
     </div>
 
-    <table class="table-auto w-2/3 mx-auto mt-20 [border-spacing:20px]">
+    <table class="table-auto w-2/3 mx-auto mt-20 [border-spacing:20px] mb-20">
       <thead>
         <tr class="font-bold border-b">
           <td class="w-60 pl-3 pb-3">Name</td>
@@ -38,8 +38,18 @@
         </tr>
         <tr>
           <td colspan="3">
+            <input
+              id="email"
+              type="email"
+              class="w-full border border-gray-300 text-xl mt-5 py-3 px-2"
+              placeholder="Please enter your email"
+              required
+            />
+          </td>
+          <td colspan="2">
             <button
-              class="mt-5 font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2"
+              class="ml-5 mt-5 font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2"
+              @click="submitOrder"
             >
               Confirm My Order
             </button>
@@ -52,11 +62,16 @@
 
 <script>
 export default {
+  head: {
+    script: [
+      {
+        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+      },
+    ],
+  },
   computed: {
     totalAmount() {
       const values = Object.values(this.$store.state.orders);
-
-      console.log('vvvvv:', values);
 
       let total = 0;
       values.forEach((element) => {
@@ -70,6 +85,12 @@ export default {
     removeItem(item) {
       // console.log(item);
       this.$store.commit('removeItem', item);
+    },
+    submitOrder() {
+      this.$axios.post('/.netlify/functions/email', {
+        email: document.getElementById('email').value,
+        orders: this.$store.state.orders,
+      });
     },
   },
 };
