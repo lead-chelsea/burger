@@ -87,7 +87,12 @@ export default {
       this.$store.commit('removeItem', item);
     },
     submitOrder() {
-      this.$axios.post('/.netlify/functions/email', {
+      // this.$axios.post('/.netlify/functions/email', {
+      //   email: document.getElementById('email').value,
+      //   orders: this.$store.state.orders,
+      // });
+
+      this.$axios.post('/.netlify/functions/firebase', {
         email: document.getElementById('email').value,
         orders: this.$store.state.orders,
       });

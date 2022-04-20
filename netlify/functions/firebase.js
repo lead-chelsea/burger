@@ -18,25 +18,27 @@ exports.handler = async function (event, context) {
   const db = getFirestore(app);
 
   try {
-    const docRef = db.collection('users').doc('alovelace');
+    const body = JSON.parse(event.body);
+    const customerEmail = body.email;
+    const orders = body.orders;
 
-    await docRef.set({
-      first: 'Ada',
-      last: 'Lovelace',
-      born: 1815,
+    // "bb5dc8842ca31d4603d6aa11448d1654"
+
+    console.log('Email...');
+    console.log(customerEmail);
+
+    const response = await db.collection('orders').add({
+      customerEmail,
+      orders,
     });
-
-    console.log('Document written with ID: ', docRef.id);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Document added successfully' }),
+      body: JSON.stringify({
+        message: 'Document added successfully - ' + response.id,
+      }),
     };
-  } catch (e) {
-    console.error('Error adding document: ', e);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ message: 'something wrong...' }),
-    };
+  } catch (error) {
+    console.log('Error adding document', error);
   }
 };
