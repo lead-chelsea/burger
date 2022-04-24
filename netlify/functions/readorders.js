@@ -4,6 +4,18 @@ const { getFirestore } = require('firebase-admin/firestore');
 const serviceAccount = JSON.parse(process.env.firebaseCredentials);
 
 exports.handler = async function (event, context) {
+  const user = context.clientContext.user;
+  console.log(user);
+
+  if (user.email != 'laucherhan1@gmail.com') {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'You do not have the rights to retrieve orders',
+      }),
+    };
+  }
+
   let app;
   if (admin.apps.length === 0) {
     app = initializeApp({

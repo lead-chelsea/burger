@@ -1,8 +1,28 @@
 <template>
+  <!--  eslint-disable no-undef -->
   <div>
     <div class="text-center bg-[url('/menu-page.jpg')]">
       <NavMenu class="pl-20" />
       <h1 class="text-white font-oswald uppercase text-6xl py-28">Orders</h1>
+    </div>
+
+    <div v-if="user == null" class="text-center mt-20">
+      <p>This page is limited to authorized user only.</p>
+      <button
+        class="font-oswald uppercase bg-red-500 text-white text-lg py-3 px-8 mt-5"
+        @click="login"
+      >
+        Login
+      </button>
+    </div>
+
+    <div v-if="user" class="text-center mt-20">
+      <button
+        class="font-oswald uppercase bg-red-500 text-white text-lg py-3 px-8"
+        @click="logout"
+      >
+        Logout
+      </button>
     </div>
 
     <div v-for="order in orders" :key="order.id">
@@ -46,14 +66,50 @@ export default {
   data() {
     return {
       orders: [],
+      user: {},
+    };
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+        },
+      ],
     };
   },
 
   mounted() {
-    this.$axios.get('/.netlify/functions/readorders').then((response) => {
-      console.log(response.data);
-      this.orders = response.data;
-    });
+    this.user = window.netlifyIdentity.currentUser();
+    if (this.user) {
+      this.readOrders();
+    }
+  },
+  methods: {
+    login() {
+      window.netlifyIdentity.open();
+      window.netlifyIdentity.on('login', (user) => {
+        this.user = user;
+        this.readOrders();
+      });
+    },
+    logout() {
+      window.netlifyIdentity.logout();
+      this.user = null;
+      this.orders = [];
+    },
+    readOrders() {
+      this.$axios
+        .get('/.netlify/functions/readorders', {
+          headers: {
+            Authorization: 'Bearer ' + this.user.token.access_token,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+          this.orders = response.data;
+        });
+    },
   },
 };
 </script>

@@ -1,16 +1,16 @@
 <template>
   <div class="font-roboto text-light text-gray-500">
     <!-- 👉 header -->
-    <div id="header" class="bg-[url('/hero-bg.jpg')] px-20">
+    <div id="header" class="bg-[url('/hero-bg.jpg')] md:px-20 px-5">
       <!-- 👉 menu -->
       <NavMenu />
 
       <!-- hero -->
-      <div class="grid grid-cols-2 pt-10 pb-20">
-        <img src="hero-burger.png" class="pr-8 mt-10" alt="" />
+      <div class="md:grid md:grid-cols-2 pt-10 pb-20 flex flex-col">
+        <img src="hero-burger.png" class="md:pr-8 md:mt-10" alt="" />
         <div>
           <h1
-            class="xl:pt-32 xl:text-9xl text-8xl text-white text-center font-lilita uppercase"
+            class="xl:pt-32 xl:text-9xl text-7xl text-white text-center font-lilita uppercase mt-10"
           >
             Classic Burger
           </h1>
@@ -26,13 +26,13 @@
     </div>
 
     <div id="section-1" class="bg-cover bg-center pb-60 bg-[url('/about.jpg')]">
-      <div class="mx-auto py-20 text-center px-24 xl:px-96">
+      <div class="mx-auto py-20 text-center px-10 md:px-24 xl:px-96">
         <h2
-          class="font-oswald font-medium text-6xl uppercase tracking-wide text-neutral-800"
+          class="font-oswald font-medium text-5xl uppercase tracking-wide text-neutral-800"
         >
           The burger tastes better when you eat it with family
         </h2>
-        <p class="font-roboto font-light py-6 px-10 text-gray-500 text-lg center">
+        <p class="font-roboto font-light py-6 md:px-10 text-gray-500 text-lg center">
           Spend quality time with your family and eat an affordable, nutritious, and
           delicious meal together. Not all burgers are fast foods. All our burgers are
           handmade to orders for you and your family members to enjoy.
@@ -44,7 +44,7 @@
     </div>
 
     <div id="section-2" class="bg-yellow-500 py-10 px-20">
-      <div class="grid grid-cols-3 text-center text-neutral-900 xl:px-52">
+      <div class="grid gap-5 md:grid-cols-3 text-center text-neutral-900 xl:px-52">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@
     </div>
 
     <div id="section-3">
-      <div class="text-center py-20 mx-40">
+      <div class="text-center py-20 md:mx-40 md:mx-10 mx-5">
         <h2 class="text-6xl font-oswald text-red-500 font-medium uppercase">
           Our Crazy Burgers
         </h2>
@@ -122,7 +122,7 @@
         </p>
 
         <!-- burger grid -->
-        <div class="grid grid-cols-2 gap-5 xl:grid-cols-4">
+        <div class="grid md:grid-cols-2 gap-5 xl:grid-cols-4">
           <!-- burger item card -->
           <BurgerItem
             image="crispy-chicken.jpg"
@@ -152,12 +152,12 @@
 
         <!-- coupon row 1 -->
         <div
-          class="grid grid-cols-12 mt-10 font-oswald uppercase text-4xl text-yellow-800 gap-5"
+          class="md:grid md:grid-cols-12 mt-10 font-oswald uppercase text-4xl text-yellow-800 gap-5"
         >
           <div
-            class="col-span-5 pl-20 pb-10 bg-cover bg-center bg-[url('/fries-bg-1.jpg')]"
+            class="text-right md:text-center md:pr-0 pr-10 pt-10 col-span-5 pl-20 pb-10 bg-cover bg-center bg-[url('/fries-bg-1.jpg')]"
           >
-            <h4 class="font-light mt-12">Get your free</h4>
+            <h4 class="font-light">Get your free</h4>
             <h4 class="font-medium">Cheese Fries</h4>
             <button
               class="font-oswald uppercase bg-red-500 text-white text-lg py-3 px-8 mt-5"
@@ -168,7 +168,7 @@
           <div
             class="col-span-7 pr-10 text-right bg-cover bg-center bg-[url('/burger-bg-1.jpg')]"
           >
-            <h4 class="font-light mt-12">
+            <h4 class="font-light mt-12 pt-10 md:pt-0">
               Crispy <br />
               Chicken
             </h4>
@@ -185,7 +185,7 @@
         </div>
 
         <!-- offer -->
-        <div class="grid grid-cols-3 mt-8 gap-5">
+        <div class="grid md:grid-cols-3 mt-8 gap-5">
           <div>
             <img src="offer-1.jpg" />
           </div>
@@ -199,14 +199,14 @@
       </div>
     </div>
 
-    <div id="section-4" class="bg-gray-100 py-20 px-20">
-      <div class="grid grid-cols-2">
-        <div class="pl-20">
+    <div id="section-4" class="bg-gray-100 py-20 md:px-20 px-10">
+      <div class="md:grid md:grid-cols-2">
+        <div class="md:pl-20">
           <img src="about.png" />
         </div>
-        <div class="pl-20 pr-4 pt-12">
+        <div class="md:pl-20 md:pr-4 pt-12">
           <h4
-            class="text-5xl font-oswald uppercase font-medium leading-snug text-neutral-900"
+            class="text-5xl font-oswald uppercase font-medium leading-snug text-neutral-900 text-center"
           >
             Nothing brings people together like a good burger
           </h4>
@@ -225,10 +225,10 @@
     </div>
 
     <div id="section-5" class="bg-yellow-500 grid grid-cols-5 text-amber-900">
-      <div class="pl-20 pt-16 col-span-3 pb-16">
+      <div class="md:pl-20 pt-16 md:col-span-3 col-span-5 pb-16 text-center px-5">
         <h4 class="font-oswald text-5xl uppercase">Download Mobile App</h4>
-        <h4 class="font-oswald text-6xl uppercase font-bold mt-2 mb-5">Save up to 20%</h4>
-        <p class="font-roboto font-light my-7 text-lg pr-12 xl:pr-36">
+        <h4 class="font-oswald text-6xl uppercase font-bold mt-5 mb-5">Save up to 20%</h4>
+        <p class="font-roboto font-light my-7 text-lg px-5 md:pr-12 xl:pr-36">
           Bye bye long queues. Order before and your food will be ready in a flash. Enjoy
           the convenience of ordering food online at any time and from any location.
         </p>
@@ -239,7 +239,7 @@
           <img src="/googleplay.png" class="h-[50px]" />
         </button>
       </div>
-      <div class="col-span-2">
+      <div class="md:col-span-2 hidden">
         <img src="/eshop.png" class="object-cover -mt-10 h-[500px]" />
       </div>
     </div>
@@ -260,12 +260,14 @@
       <h2 class="text-6xl font-oswald text-red-500 font-medium uppercase mb-5">
         Wide Selections
       </h2>
-      <p class="text-xl text-gray-500 px-32 font-light">
+      <p class="text-xl text-gray-500 md:px-32 md:px-10 px-5 font-light">
         Besides burgers, we also have a large range of items including sandwiches, wraps,
         panini, soups, salads and more.
       </p>
 
-      <div class="grid grid-cols-4 gap-5 mx-36 mt-10">
+      <div
+        class="md:grid md:grid-cols-4 flex flex-col gap-10 md:mx-36 md:mx-10 mx-5 mt-10"
+      >
         <img src="img-01.jpg" />
         <img src="img-02.jpg" />
         <img src="img-03.jpg" />
@@ -279,11 +281,11 @@
 
     <div
       id="section-8"
-      class="text-center text-neutral-700 bg-top bg-cover bg-[url('/banner.jpg')] py-20 px-28"
+      class="text-center text-neutral-700 bg-top bg-cover bg-[url('/banner.jpg')] py-20 md:px-28 px-5"
     >
       <h4 class="font-oswald text-4xl uppercase">We guarantee</h4>
       <h4 class="font-oswald text-6xl uppercase font-medium my-5">30 Minutes Delivery</h4>
-      <p class="text-lg px-20 font-light">
+      <p class="text-lg px-10 font-light">
         Free delivery for all orders above RM 30. We are committed to deliver the freshest
         and warmest food to all our customers. If your order is not delivered within 30
         minutes, your next meal is on us!
@@ -297,7 +299,7 @@
 
     <div
       id="contacts"
-      class="grid grid-cols-4 mt-10 px-10 mx-4 text-neutral-900 text-center font-light"
+      class="md:grid md:grid-cols-4 mt-10 px-10 md:mx-4 text-neutral-900 text-center font-light"
     >
       <div>
         <h4 class="uppercase font-medium font-oswald text-2xl my-5">Location</h4>
@@ -337,3 +339,17 @@
     <PageFooter />
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+        },
+      ],
+    };
+  },
+};
+</script>
